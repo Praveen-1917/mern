@@ -105,7 +105,7 @@ app.get(
 );
 app.get(
   "/auth/google/callback",
-  passport.authenticate("google", { failureRedirect: "http://localhost:3000" }),
+  passport.authenticate("google", { failureRedirect: "https://regal-melba-7c94ec.netlify.app" }),
   function (req, res) {
     console.log("req.body");
 
@@ -118,11 +118,11 @@ app.get(
     if (isJoinSession) {
       isJoinSession = false;
       res.redirect(
-        `http://localhost:3000/session?name=${username_auth_name}&sessionid=${sessionId}`
+        `https://regal-melba-7c94ec.netlify.app/session?name=${username_auth_name}&sessionid=${sessionId}`
       );
     } else {
       res.redirect(
-        "http://localhost:3000/userhome" +
+        "https://regal-melba-7c94ec.netlify.app/userhome" +
           "/" +
           username_auth_id +
           "/" +
@@ -141,7 +141,7 @@ app.get("/joinsession/:sessionid", function (req, res) {
 });
 
 app.get("/logout", function (req, res) {
-  res.redirect("http://localhost:3000/");
+  res.redirect("https://regal-melba-7c94ec.netlify.app/");
 });
 
 // const router = express.Router();
