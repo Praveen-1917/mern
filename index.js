@@ -105,7 +105,7 @@ app.get(
 );
 app.get(
   "/auth/google/callback",
-  passport.authenticate("google", { failureRedirect: "https://regal-melba-7c94ec.netlify.app" }),
+  passport.authenticate("google", { failureRedirect: "https://keen-kleicha-86cbc5.netlify.app" }),
   function (req, res) {
     console.log("req.body");
 
@@ -118,11 +118,11 @@ app.get(
     if (isJoinSession) {
       isJoinSession = false;
       res.redirect(
-        `https://regal-melba-7c94ec.netlify.app/session?name=${username_auth_name}&sessionid=${sessionId}`
+        `https://keen-kleicha-86cbc5.netlify.app/session?name=${username_auth_name}&sessionid=${sessionId}`
       );
     } else {
       res.redirect(
-        "https://regal-melba-7c94ec.netlify.app/userhome" +
+        "https://keen-kleicha-86cbc5.netlify.app/userhome" +
           "/" +
           username_auth_id +
           "/" +
@@ -141,7 +141,7 @@ app.get("/joinsession/:sessionid", function (req, res) {
 });
 
 app.get("/logout", function (req, res) {
-  res.redirect("https://regal-melba-7c94ec.netlify.app/");
+  res.redirect("https://keen-kleicha-86cbc5.netlify.app/");
 });
 
 // const router = express.Router();
@@ -190,7 +190,7 @@ function startServer() {
   app.use("/peerjs", peerServer);
   const io = socketio(server, {
     cors: {
-      origin: "http://localhost:3000",
+      origin: "https://keen-kleicha-86cbc5.netlify.app",
     },
   });
 
