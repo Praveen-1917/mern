@@ -269,7 +269,7 @@ function startServer() {
       }
     });
   });
-  server.listen("https://keen-kleicha-86cbc5.netlify.app" || 5000, () =>
+  server.listen(process.env.PORT || 5000, () =>
     console.log(`Server has started at 5000`)
   );
   // Connect any incoming WebSocket connection to ShareDB
