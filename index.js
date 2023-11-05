@@ -105,7 +105,7 @@ app.get(
 );
 app.get(
   "/auth/google/callback",
-  passport.authenticate("google", { failureRedirect: "https://keen-kleicha-86cbc5.netlify.app" }),
+  passport.authenticate("google", { failureRedirect: "https://curious-sunburst-4fff8a.netlify.app" }),
   function (req, res) {
     console.log("req.body");
 
@@ -118,11 +118,11 @@ app.get(
     if (isJoinSession) {
       isJoinSession = false;
       res.redirect(
-        `https://keen-kleicha-86cbc5.netlify.app/session?name=${username_auth_name}&sessionid=${sessionId}`
+        `https://curious-sunburst-4fff8a.netlify.app/session?name=${username_auth_name}&sessionid=${sessionId}`
       );
     } else {
       res.redirect(
-        `https://keen-kleicha-86cbc5.netlify.app/userhome/${username_auth_id}/${username_auth_name}`
+        `https://curious-sunburst-4fff8a.netlify.app/userhome/${username_auth_id}/${username_auth_name}`
           
       );
     }
@@ -138,7 +138,7 @@ app.get("/joinsession/:sessionid", function (req, res) {
 });
 
 app.get("/logout", function (req, res) {
-  res.redirect("https://keen-kleicha-86cbc5.netlify.app/");
+  res.redirect("https://curious-sunburst-4fff8a.netlify.app/");
 });
 
 // const router = express.Router();
@@ -187,7 +187,7 @@ function startServer() {
   app.use("/peerjs", peerServer);
   const io = socketio(server, {
     cors: {
-      origin: "https://keen-kleicha-86cbc5.netlify.app",
+      origin: "https://curious-sunburst-4fff8a.netlify.app",
     },
   });
 
