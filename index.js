@@ -182,7 +182,7 @@ function startServer() {
   // var app = express();
   app.use(express.static("static"));
   // app.use(router);
-  var sharedb_server = "https://codexshare-7ce4.onrender.com";
+  var sharedb_server = http.createServer(app);
   var server = http.createServer(app);
   const peerServer = ExpressPeerServer(server, {
     debug: true,
@@ -280,6 +280,6 @@ function startServer() {
     backend.listen(stream);
   });
 
-  
+  sharedb_server.listen(8080);
   console.log("ShareDB listening on http://localhost:8000");
 }
