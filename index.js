@@ -177,7 +177,7 @@ function createDoc(callback) {
 function startServer() {
   // Create a web server to serve files and listen to WebSocket connections
   // var app = express();
-  app.use(express.json());
+  app.use(express.static("static"));
   // app.use(router);
   var sharedb_server = http.createServer(app);
   var server = http.createServer(app);
