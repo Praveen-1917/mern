@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build" : "npm  i",
-    "start": "nodemon index.js"
+    "build": "npm i",
+    "start": "node index.js"
   },
-  "author": "Atharva Marathe",
+  "author": "Ajay",
   "license": "ISC",
   "dependencies": {
     "@teamwork/websocket-json-stream": "^2.0.0",
