@@ -122,11 +122,8 @@ app.get(
       );
     } else {
       res.redirect(
-        `https://keen-kleicha-86cbc5.netlify.app/userhome` +
-          `/` +
-          username_auth_id +
-          `/` +
-          username_auth_name
+        `https://keen-kleicha-86cbc5.netlify.app/userhome/${username_auth_id}/${username_auth_name}`
+          
       );
     }
     // res.redirect("http://localhost:3000/userhome");
