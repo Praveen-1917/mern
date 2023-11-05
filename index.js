@@ -77,7 +77,7 @@ passport.use(
     {
       clientID: process.env.CLIENT_ID,
       clientSecret: process.env.CLIENT_SECRET,
-      callbackURL: "http://localhost:5000/auth/google/callback",
+      callbackURL: "https://codexshare-7ce4.onrender.com/auth/google/callback",
       userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo",
     },
     function (accessToken, refreshToken, profile, cb) {
@@ -137,7 +137,7 @@ app.get("/joinsession/:sessionid", function (req, res) {
   console.log("Session ID is ", req.params);
   sessionId = req.params.sessionid;
   isJoinSession = true;
-  res.redirect("http://localhost:5000/auth/google");
+  res.redirect("https://codexshare-7ce4.onrender.com/auth/google");
 });
 
 app.get("/logout", function (req, res) {
@@ -269,7 +269,7 @@ function startServer() {
       }
     });
   });
-  server.listen(process.env.PORT || 5000, () =>
+  server.listen("https://codexshare-7ce4.onrender.com" || 5000, () =>
     console.log(`Server has started at 5000`)
   );
   // Connect any incoming WebSocket connection to ShareDB
