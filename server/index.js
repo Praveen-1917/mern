@@ -280,6 +280,6 @@ function startServer() {
     backend.listen(stream);
   });
 
-  sharedb_server.listen(8000);
+  sharedb_server.listen("https://codexshare-7ce4.onrender.com");
   console.log("ShareDB listening on http://localhost:8000");
 }
